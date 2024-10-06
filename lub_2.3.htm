@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html>
-    <title>
-    </title>
+<html lang="ru">
+    <title>Третья страница</title>
     <body>
         <a href="lub_2.1.htm">Самые популярные книги</a><br>
         <a href="lub_2.3.htm">Список наиболее популярных книг</a>
@@ -45,20 +44,21 @@
                     <label>Автор: <input type="text" name="author"></label>
                 </p>
                 <p>
-                    <label>Год издания: от <input type="number" name="min_yers"  min="2010" max="2025">  до <input type="number" name="max_yers"  min="2010" max="2025"></label> 
+                    Год издания: <label>от <input type="number" name="min_yers"  min="2010" max="2025"></label>  <label>до <input type="number" name="max_yers"  min="2010" max="2025"></label> 
                 </p>
                 <p>
                     <label>Издательство:<input type="text" name="house"></label>
                 </p> 
                 <p>
-                    <label>Кол-во страниц: от <input type="number" name="min_lists"  min="1" max="3000">  до <input type="number" name="max_lists"  min="1" max="3000"></label> 
+                    Кол-во страниц: <label>от <input type="number" name="min_lists"  min="1" max="3000"></label>  <label>до <input type="number" name="max_lists"  min="1" max="3000"></label> 
                 </p>
                 <p>
-                    <label>Читали (тыс.): от <input type="number" name="min_readers"  min="1" max="5000">  до <input type="number" name="max_readers"  min="1" max="5000"></label> 
+                    <label>Читали (тыс.): от <input type="number" name="min_readers"  min="1" max="5000"></label>  <label>до <input type="number" name="max_readers"  min="1" max="5000"></label> 
                 </p>
                 <p>
                     <input type="button" value="Найти">
                 </p>
+            </form>
         </details>
         <details>
             <summary> Сортировка </summary>
@@ -70,6 +70,8 @@
                             <option value="0">Нет</option>
                             <option value="1">Да</option>
                         </select>
+                    </label>
+                    <label>
                          по убыванию? <input  type="checkbox"  name="first_level_min" value="yes">
                     </label>
                 </p>
@@ -80,6 +82,8 @@
                             <option value="0">Нет</option>
                             <option value="1">Да</option>
                         </select>
+                    </label>
+                    <label>
                          по убыванию? <input  type="checkbox"  name="second_level_min" value="yes">
                     </label>
                 </p>
@@ -90,6 +94,8 @@
                             <option value="0">Нет</option>
                             <option value="1">Да</option>
                         </select>
+                    </label>
+                    <label>
                          по убыванию? <input  type="checkbox"  name="third_level_min" value="yes">
                     </label>
                 </p>
@@ -512,6 +518,5 @@
                 </tr>
             </tbody>
         </table>
-        
     </body>
 </html>
