@@ -1,5 +1,4 @@
 .menu {
-    display: inline;
     
     float: right;
 }
@@ -7,11 +6,8 @@
 .nav {
     background-color: #999;
     overflow: hidden;
-    padding-top: 25px;
-    padding-bottom: 20px;
-    white-space: nowrap;
-    width: 100%;
-    height: 25px;
+    padding: 2% 0px;
+
 }
 
 .nav a {
@@ -19,7 +15,7 @@
     padding: 10px 20px;
     background-color: #CCCCCC;
     color: white;
-    margin-right: 10px;
+    
 }
 
 .nav .active {
@@ -27,10 +23,10 @@
 }
 
 .title {
-    margin-left: 20px;
-    font-size: 1.5pc;
-    margin-top: -30px ;
-    width: 10%;
+   
+    
+    float: left;
+    
 }
 
 
@@ -68,7 +64,7 @@
     padding-top: 15px;
     padding-left: 10px;
     padding-right: 10px;
-    height: 1140px;
+   
 }
 
 .left-img {
@@ -100,20 +96,20 @@
 
 .card-image {
     width: 50%;
-    height: 250px;    
+       
     float: right;
 }
 
 .right-text {
     width: 49%;
     display: inline;
-    float: left;
+   
     vertical-align:bottom;
     text-align: justify;
 }
 
 .fio {
-    vertical-align: 75%;
+   
     font-size: 25px;
     float: left;
     white-space: nowrap;
@@ -123,17 +119,16 @@
 .mail {
    
     padding-top: 20px;
-    display: inline-block;
+    
     height: 50px;
-    width: 100%;   
+      
     background-color: #CCCCCC;
 }
   
 .contacts {
-    font-size:25px;
-    vertical-align: 75%;
+  
     float: right;
-    margin-right: 10px;
+   
 }
 
 .contacts a {
