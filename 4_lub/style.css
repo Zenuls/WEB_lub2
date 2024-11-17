@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #f0f0f0;
+}
+
+.menu {
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    padding: 10px;
+    width: 85%;
+}
+
+.menu-item {
+    text-decoration: none;
+    color:black;
+    white-space: nowrap;
+}
+
+.menu-item.active {
+    color: red;
+}
+
+main {
+    padding: 20px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: space-evenly;
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+}
+
+.logo-block {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin: 0 1%;
+}
+
+.logo {
+    justify-content: center;
+    height: 150px;
+    display: flex;
+}
+
+.logo-text {
+    font-size: 14px;
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.content-block {
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: 85%;
+}
+
+.content-block.with-image {
+    padding: 20px;
+    display: flex;
+}
+
+.text-and-image {
+    display: flex;
+    flex-direction: row; /* Расположить элементы в строку */
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.text {
+    font-size: 18px;
+    text-align: center; /* Выравнивание текста по левому краю */
+}
+
+.text p {
+    text-align: justify;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1%;
+    background-color: #f0f0f0;
+}
+
+.contacts {
+    text-align: right;
+}
+
+@media (max-width: 1270px) {
+    .gallery {
+        grid-template-columns: repeat(2, max-content);
+        grid-template-rows: repeat(2, max-content);
+    }
+}
+
+@media (max-width: 750px) {
+    .menu div {
+        display: none;
+    }
+    header {
+        background-color: #ffffff;
+        
+    }
+
+    .menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20%;
+        text-align: center;
+        width: 100%;
+    }
+    .menu-item {
+        
+        white-space: wrap;
+        
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .logos {
+        flex-direction: column;
+        align-items: center;
+    }
+}
