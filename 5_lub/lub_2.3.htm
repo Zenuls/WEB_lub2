@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <title>Третья страница</title>
+    <body>
+        <a href="5.html">Самые популярные книги</a><br>
+        <a href="lub_2.3.htm">Список наиболее популярных книг</a>
+        <hr>
+        <details>
+            <summary> График </summary>
+            <table>
+                <tr>
+                    <th>Значение по оси OX</th>
+                    <th>Результат</th>
+                </tr>
+                <tr>
+                    <td>
+                        <form>
+                            <input  type="radio"  name="OX" value="author"> Автор<br>
+                            <input  type="radio"  name="OX" value="yers"> Год издания<br>
+                            <input  type="radio"  name="OX" value="house"> Издательство
+                        </form> 
+                    </td>
+                    <td>
+                        <form>
+                            <input  type="checkbox"  name="rez" value="max_r"> Максимально читаема<br>
+                            <input  type="checkbox"  name="rez" value="min_r"> Минимально читаема<br>
+                            <input  type="checkbox"  name="rez" value="books"> Кол-во книг<br>
+                        </form> 
+                    </td>
+                </tr>
+            </table>
+            <input type="button" value="Построить">
+            <p>
+                Здесь будет график
+            </p>
+        </details>
+        <details>
+            <summary> Фильтр </summary>
+            <form> 
+                <p> 
+                    <label>Название книги: <input type="text" name="name"></label> 
+                </p>
+                <p>
+                    <label>Автор: <input type="text" name="author"></label>
+                </p>
+                <p>
+                    Год издания: <label>от <input type="number" name="min_yers"  min="2010" max="2025"></label>  <label>до <input type="number" name="max_yers"  min="2010" max="2025"></label> 
+                </p>
+                <p>
+                    <label>Издательство:<input type="text" name="house"></label>
+                </p> 
+                <p>
+                    Кол-во страниц: <label>от <input type="number" name="min_lists"  min="1" max="3000"></label>  <label>до <input type="number" name="max_lists"  min="1" max="3000"></label> 
+                </p>
+                <p>
+                    <label>Читали (тыс.): от <input type="number" name="min_readers"  min="1" max="5000"></label>  <label>до <input type="number" name="max_readers"  min="1" max="5000"></label> 
+                </p>
+                <p>
+                    <input type="button" value="Найти">
+                </p>
+            </form>
+        </details>
+        <details>
+            <summary> Сортировка </summary>
+            <form>
+                <p>
+                    <label>                     
+                        Первый уровень: 
+                        <select id="first">
+                            <option value="0">Нет</option>
+                            <option value="1">Название книги</option>
+                            <option value="2">Автор</option>
+                            <option value="3">Год издательства</option>
+                            <option value="4">Издание</option>
+                            <option value="5">Кол-во страниц</option>
+                            <option value="6">Читатели</option>
+                        </select>
+                    </label>
+                    <label>
+                         по убыванию? <input  type="checkbox"  name="first_level_min" value="yes">
+                    </label>
+                </p>
+                <p>
+                    <label>                     
+                        Второй уровень: 
+                        <select id="second">
+                            <option value="0">Нет</option>
+                            <option value="1">Название книги</option>
+                            <option value="2">Автор</option>
+                            <option value="3">Год издательства</option>
+                            <option value="4">Издание</option>
+                            <option value="5">Кол-во страниц</option>
+                            <option value="6">Читатели</option>
+                        </select>
+                    </label>
+                    <label>
+                         по убыванию? <input  type="checkbox"  name="second_level_min" value="yes">
+                    </label>
+                </p>
+                <p>
+                    <label>                     
+                        Третий уровень: 
+                        <select id="third">
+                            <option value="0">Нет</option>
+                            <option value="1">Название книги</option>
+                            <option value="2">Автор</option>
+                            <option value="3">Год издательства</option>
+                            <option value="4">Издание</option>
+                            <option value="5">Кол-во страниц</option>
+                            <option value="6">Читатели</option>
+                        </select>
+                    </label>
+                    <label>
+                         по убыванию? <input  type="checkbox"  name="third_level_min" value="yes">
+                    </label>
+                </p>
+            </form>
+            <p>
+                <input type="button" value="Сортировать">
+            </p>
+        </details>
+        <table border="1" align="left" cellspacing="0" cellpadding="2">
+            <thead>
+                <tr>
+                    <th>Название книги</th>
+                    <th>Автор</th>
+                    <th>Год издания</th>
+                    <th>Издательство</th>
+                    <th>Кол-во страниц</th>
+                    <th>Читали (тыс.)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Мастер и Маргарита</td>
+                    <td>Михаил Булгаков</td>
+                    <td>2010</td>
+                    <td>АСТ</td>
+                    <td>512</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <td>Преступление и наказание</td>
+                    <td>Федор Достоевский</td>
+                    <td>2018</td>
+                    <td>Эксмо</td>
+                    <td>672</td>
+                    <td>3000</td>
+                </tr>
+                <tr>
+                    <td>Маленький принц</td>
+                    <td>Антуан де Сент-Экзюпери</td>
+                    <td>2020</td>
+                    <td>Рипол Классик</td>
+                    <td>112</td>
+                    <td>2500</td>
+                </tr>
+                <tr>
+                    <td>Собачье сердце</td>
+                    <td>Михаил Булгаков</td>
+                    <td>2014</td>
+                    <td>АСТ</td>
+                    <td>160</td>
+                    <td>1500</td>
+                </tr>
+                <tr>
+                    <td>Три товарища</td>
+                    <td>Эрих Мария Ремарк</td>
+                    <td>2016</td>
+                    <td>Азбука</td>
+                    <td>528</td>
+                    <td>1700</td>
+                </tr>
+                <tr>
+                    <td>Над пропастью во ржи</td>
+                    <td>Джером Сэлинджер</td>
+                    <td>2017</td>
+                    <td>Азбука</td>
+                    <td>288</td>
+                    <td>2300</td>
+                </tr>
+                <tr>
+                    <td>Герой нашего времени</td>
+                    <td>Михаил Лермонтов</td>
+                    <td>2019</td>
+                    <td>Эксмо</td>
+                    <td>288</td>
+                    <td>1900</td>
+                </tr>
+                <tr>
+                    <td>Приключения Шерлока Холмса</td>
+                    <td>Артур Конан Дойл</td>
+                    <td>2021</td>
+                    <td>АСТ</td>
+                    <td>576</td>
+                    <td>2700</td>
+                </tr>
+                <tr>
+                    <td>Портрет Дориана Грея</td>
+                    <td>Оскар Уайльд</td>
+                    <td>2015</td>
+                    <td>Азбука</td>
+                    <td>320</td>
+                    <td>2200</td>
+                </tr>
+                <tr>
+                    <td>Властелин колец</td>
+                    <td>Джон Рональд Руэл Толкин</td>
+                    <td>2020</td>
+                    <td>АСТ</td>
+                    <td>1200</td>
+                    <td>5000</td>
+                </tr>
+                <tr>
+                    <td>Крестный отец</td>
+                    <td>Марио Пьюзо</td>
+                    <td>2018</td>
+                    <td>Азбука</td>
+                    <td>512</td>
+                    <td>1600</td>
+                </tr>
+                <tr>
+                    <td>Триумфальная арка</td>
+                    <td>Эрих Мария Ремарк</td>
+                    <td>2016</td>
+                    <td>Азбука</td>
+                    <td>432</td>
+                    <td>1300</td>
+                </tr>
+                <tr>
+                    <td>Мертвые души</td>
+                    <td>Николай Гоголь</td>
+                    <td>2017</td>
+                    <td>Эксмо</td>
+                    <td>448</td>
+                    <td>2100</td>
+                </tr>
+                <tr>
+                    <td>Поющие в терновнике</td>
+                    <td>Колин Маккалоу</td>
+                    <td>2014</td>
+                    <td>АСТ</td>
+                    <td>640</td>
+                    <td>1100</td>
+                </tr>
+                <tr>
+                    <td>Грозовой перевал</td>
+                    <td>Эмили Бронте</td>
+                    <td>2019</td>
+                    <td>Азбука</td>
+                    <td>416</td>
+                    <td>1400</td>
+                </tr>
+                <tr>
+                    <td>На западном фронте без перемен</td>
+                    <td>Эрих Мария Ремарк</td>
+                    <td>2020</td>
+                    <td>Азбука</td>
+                    <td>320</td>
+                    <td>1700</td>
+                </tr>
+                <tr>
+                    <td>Демиан</td>
+                    <td>Герман Гессе</td>
+                    <td>2018</td>
+                    <td>Эксмо</td>
+                    <td>256</td>
+                    <td>1200</td>
+                </tr>
+                <tr>
+                    <td>Зеленая миля</td>
+                    <td>Стивен Кинг</td>
+                    <td>2017</td>
+                    <td>АСТ</td>
+                    <td>384</td>
+                    <td>2600</td>
+                </tr>
+                <tr>
+                    <td>Сто лет одиночества</td>
+                    <td>Габриэль Гарсиа Маркес</td>
+                    <td>2019</td>
+                    <td>Эксмо</td>
+                    <td>464</td>
+                    <td>2200</td>
+                </tr>
+                <tr>
+                    <td>Собор Парижской Богоматери</td>
+                    <td>Виктор Гюго</td>
+                    <td>2020</td>
+                    <td>Эксмо</td>
+                    <td>656</td>
+                    <td>1800</td>
+                </tr>
+                <tr>
+                    <td>Робинзон Крузо</td>
+                    <td>Даниель Дефо</td>
+                    <td>2017</td>
+                    <td>АСТ</td>
+                    <td>320</td>
+                    <td>2400</td>
+                </tr>
+                <tr>
+                    <td>Приключения Алисы в стране чудес</td>
+                    <td>Льюис Кэрролл</td>
+                    <td>2020</td>
+                    <td>Азбука</td>
+                    <td>192</td>
+                    <td>2300</td>
+                </tr>
+                <tr>
+                    <td>По ком звонит колокол</td>
+                    <td>Эрнест Хемингуэй</td>
+                    <td>2019</td>
+                    <td>Азбука</td>
+                    <td>544</td>
+                    <td>1900</td>
+                </tr>
+                <tr>
+                    <td>Мартин Иден</td>
+                    <td>Джек Лондон</td>
+                    <td>2021</td>
+                    <td>Эксмо</td>
+                    <td>448</td>
+                    <td>1600</td>
+                </tr>
+                <tr>
+                    <td>Понедельник начинается в субботу</td>
+                    <td>Аркадий и Борис Стругацкие</td>
+                    <td>2018</td>
+                    <td>АСТ</td>
+                    <td>304</td>
+                    <td>1700</td>
+                </tr>
+                <tr>
+                    <td>Мы</td>
+                    <td>Евгений Замятин</td>
+                    <td>2019</td>
+                    <td>Азбука</td>
+                    <td>320</td>
+                    <td>1500</td>
+                </tr>
+                <tr>
+                    <td>Прощай, оружие!</td>
+                    <td>Эрнест Хемингуэй</td>
+                    <td>2021</td>
+                    <td>АСТ</td>
+                    <td>352</td>
+                    <td>1400</td>
+                </tr>
+                <tr>
+                    <td>Доктор Живаго</td>
+                    <td>Борис Пастернак</td>
+                    <td>2015</td>
+                    <td>Азбука</td>
+                    <td>608</td>
+                    <td>1300</td>
+                </tr>
+                <tr>
+                    <td>Камера обскура</td>
+                    <td>Владимир Набоков</td>
+                    <td>2020</td>
+                    <td>Азбука</td>
+                    <td>320</td>
+                    <td>1000</td>
+                </tr>
+                <tr>
+                    <td>Фауст</td>
+                    <td>Иоганн Вольфганг Гёте</td>
+                    <td>2017</td>
+                    <td>Эксмо</td>
+                    <td>464</td>
+                    <td>1600</td>
+                </tr>
+                <tr>
+                    <td>Божественная комедия</td>
+                    <td>Данте Алигьери</td>
+                    <td>2019</td>
+                    <td>Азбука</td>
+                    <td>704</td>
+                    <td>1700</td>
+                </tr>
+                <tr>
+                    <td>Заводной апельсин</td>
+                    <td>Энтони Берджесс</td>
+                    <td>2021</td>
+                    <td>Эксмо</td>
+                    <td>240</td>
+                    <td>1400</td>
+                </tr>
+                <tr>
+                    <td>Чапаев и Пустота</td>
+                    <td>Виктор Пелевин</td>
+                    <td>2018</td>
+                    <td>АСТ</td>
+                    <td>320</td>
+                    <td>1500</td>
+                </tr>
+                <tr>
+                    <td>Повелитель мух</td>
+                    <td>Уильям Голдинг</td>
+                    <td>2021</td>
+                    <td>Азбука</td>
+                    <td>304</td>
+                    <td>1600</td>
+                </tr>
+                <tr>
+                    <td>Чума</td>
+                    <td>Альбер Камю</td>
+                    <td>2020</td>
+                    <td>Эксмо</td>
+                    <td>320</td>
+                    <td>1400</td>
+                </tr>
+                <tr>
+                    <td>Сегун</td>
+                    <td>Джеймс Клавелл</td>
+                    <td>2021</td>
+                    <td>Азбука</td>
+                    <td>1200</td>
+                    <td>1000</td>
+                </tr>
+                <tr>
+                    <td>Марсианские хроники</td>
+                    <td>Рэй Брэдбери</td>
+                    <td>2019</td>
+                    <td>Азбука</td>
+                    <td>384</td>
+                    <td>2500</td>
+                </tr>
+                <tr>
+                    <td>Солярис</td>
+                    <td>Станислав Лем</td>
+                    <td>2020</td>
+                    <td>АСТ</td>
+                    <td>304</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <td>Степной волк</td>
+                    <td>Герман Гессе</td>
+                    <td>2021</td>
+                    <td>Эксмо</td>
+                    <td>320</td>
+                    <td>1300</td>
+                </tr>
+                <tr>
+                    <td>Невыносимая легкость бытия</td>
+                    <td>Милан Кундера</td>
+                    <td>2020</td>
+                    <td>АСТ</td>
+                    <td>320</td>
+                    <td>1100</td>
+                </tr>
+                <tr>
+                    <td>Пена дней</td>
+                    <td>Борис Виан</td>
+                    <td>2019</td>
+                    <td>Азбука</td>
+                    <td>320</td>
+                    <td>1200</td>
+                </tr>
+                <tr>
+                    <td>Осиная Фабрика</td>
+                    <td>Иэн Бэнкс</td>
+                    <td>2019</td>
+                    <td>АСТ</td>
+                    <td>288</td>
+                    <td>900</td>
+                </tr>
+                <tr>
+                    <td>Мир глазами Гарпа</td>
+                    <td>Джон Ирвинг</td>
+                    <td>2020</td>
+                    <td>Азбука</td>
+                    <td>608</td>
+                    <td>1100</td>
+                </tr>
+                <tr>
+                    <td>Английский пациент</td>
+                    <td>Майкл Ондатже</td>
+                    <td>2019</td>
+                    <td>Азбука</td>
+                    <td>320</td>
+                    <td>800</td>
+                </tr>
+                <tr>
+                    <td>451 градус по Фаренгейту</td>
+                    <td>Рэй Брэдбери</td>
+                    <td>2020</td>
+                    <td>АСТ</td>
+                    <td>256</td>
+                    <td>2600</td>
+                </tr>
+                <tr>
+                    <td>Парфюмер. История одного убийцы</td>
+                    <td>Патрик Зюскинд</td>
+                    <td>2021</td>
+                    <td>Азбука</td>
+                    <td>320</td>
+                    <td>1800</td>
+                </tr>
+                <tr>
+                    <td>1984</td>
+                    <td>Джордж Оруэлл</td>
+                    <td>2018</td>
+                    <td>АСТ</td>
+                    <td>352</td>
+                    <td>3200</td>
+                </tr>
+                <tr>
+                    <td>Белый Клык</td>
+                    <td>Джек Лондон</td>
+                    <td>2020</td>
+                    <td>Азбука</td>
+                    <td>288</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <td>Идиот</td>
+                    <td>Федор Достоевский</td>
+                    <td>2019</td>
+                    <td>Эксмо</td>
+                    <td>656</td>
+                    <td>2400</td>
+                </tr>
+                <tr>
+                    <td>Старик и море</td>
+                    <td>Эрнест Хемингуэй</td>
+                    <td>2020</td>
+                    <td>АСТ</td>
+                    <td>128</td>
+                    <td>2700</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

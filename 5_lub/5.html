@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Лабораторная работа Bootstrap</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="bg-light">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">Книги</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active text-danger" href="5.html">Самые популярные книги</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="lub_2.3.htm">Список наиболее популярных книг</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Меню_3</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Меню_4</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-4">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 ">
+            <div class="col d-flex justify-content-center">
+                <div class="hover-zoom">
+                    <a href="lub_2.2.htm">
+                        <img src="4.jpg" class="img-fluid " alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <div class="hover-zoom">
+                    <img src="5.jpg" class="img-fluid " alt="">
+                </div>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <div class="hover-zoom">
+                    <img src="6.jpg" class="img-fluid " alt="">
+                </div>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <div class="hover-zoom">
+                    <img src="7.jpg" class="img-fluid " alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="text-center h-100">
+                    <img src="2.png" class="card-img-top mx-auto mt-3" alt="" style="width: 50%;">
+                    <div class="card-body">
+                        <p class="card-text">Книга из школьной программы, которую трудно понять в нежном подростковом
+                            возрасте. Писатель показал двойственность человеческой души, когда черное переплетается с
+                            белым. История о Раскольникове, который переживает внутреннюю борьбу.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center h-100">
+                    <img src="3.png" class="card-img-top mx-auto mt-3" alt="" style="width: 50%;">
+                    <div class="card-body">
+                        <p class="card-text">Небольшая история, в которой заключен огромный жизненный смысл. История,
+                            которая заставляет по-другому посмотреть на привычные вещи.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center h-100">
+                    <img src="8.png" class="card-img-top mx-auto mt-3" alt="" style="width: 50%;">
+                    <div class="card-body">
+                        <p class="card-text">Классический сборник рассказов Артура Конан Дойла о гениальном детективе,
+                            решающем сложные загадки с помощью логики и наблюдательности. Эти рассказы стали эталоном
+                            детективного жанра и подарили миру одного из самых известных литературных героев.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content mt-4">
+            <div class="content-block row mb-3 border p-3">
+                <div class="col-md-9">
+                    <h2 class="text-center">"Собачье сердце" Михаил Булгаков</h2>
+                    <p class="text-justify">Остроумная и глубокая повесть, в которой сатирически изображены реалии
+                        советской эпохи. Профессор Преображенский проводит эксперимент, пересаживая человеческие органы
+                        собаке Шарику. В результате пёс превращается в примитивного и грубого Шарикова, воплощающего
+                        худшие черты общества. <br> <br>
+                        Через этот сюжет Булгаков исследует вопросы морали, границ науки и неизменности человеческой
+                        природы. Повесть впечатляет ярким языком, живыми образами и философской глубиной. Это
+                        произведение остаётся актуальным и сегодня, поднимая вечные вопросы о человечности, культуре и
+                        прогрессе. </p>
+                </div>
+                <div class="col-md-3 d-flex justify-content-center">
+                    <img src="4.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+
+            <div class="content-block row border p-3">
+                <div class="col-12">
+                    <h2 class="text-center">"Три товарища" Эрих Мария Ремарк</h2>
+                    <p class="text-justify">Это роман, который погружает в атмосферу послевоенной Германии 1920-х годов,
+                        когда разрушенные судьбы и моральные травмы Первой мировой войны еще долго отражались в жизни
+                        людей. Три героя — Роберт, Готфрид и Отто — пытаются выжить и найти смысл в этом мире, который
+                        кажется безнадежно разбитым. Вместе они открывают автомастерскую, которая становится их опорой в
+                        трудные времена.<br>
+                        <br>Одной из ключевых тем романа является любовь. Отношения Роберта и Патриции Хольман, которая
+                        страдает от туберкулеза, становятся не только ярким, но и трагическим аспектом произведения. В
+                        их любви и боли Ремарк показывает хрупкость жизни и безысходность ситуации, когда счастье всегда
+                        отстает от времени и обстоятельств. Однако через личные утраты и разочарования роман все же
+                        вдохновляет на поиски радости и веры в будущее.<br>
+                        <br>Ремарк искусно передает атмосферу эпохи, показывая не только проблемы личной судьбы, но и
+                        более широкие социальные изменения в Германии того времени. Это произведение о том, как люди
+                        пытаются пережить свои травмы, сохранить достоинство и поддерживать друг друга в мире, где
+                        невозможно избежать утрат.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-light py-3">
+        <div class="container d-flex justify-content-between">
+            <div>&copy; Иванов В.А., группа 5, 2024-2025</div>
+            <div>✉ Контакты</div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
