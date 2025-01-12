@@ -1,0 +1,205 @@
+/* Общие стили */
+.page__main-container
+  padding 1rem
+
+.nav__container
+  display flex
+  align-items center
+  padding 0 20px
+
+.nav__logo
+  color white
+  text-decoration none
+  font-size 24px
+  font-weight bold
+
+.nav__list
+  list-style none
+  display flex
+  margin 0
+  padding 0
+  font-size 20px
+
+@media (max-width 900px)
+  .nav__container
+    flex-direction column
+    align-items flex-start
+
+  .nav__list
+    flex-direction column
+    margin-top 10px
+
+/* Стили для изображений */
+.image-grid
+  display flex  /* Используем flexbox для центрирования */
+  justify-content center  /* Центрируем изображения по горизонтали */
+  align-items center  /* Центрируем изображения по вертикали */
+  flex-wrap wrap  /* Разрешаем перенос изображений */
+  gap 20px
+
+.image-wrapper
+  display flex
+  justify-content center
+  overflow hidden
+
+.image-grid__image
+  width 100%
+  max-width 300px
+  transition transform 0.3s ease
+
+.image-grid__image:hover
+  transform scale(1.1)
+
+/* Стили карточек */
+.card-grid
+  display grid
+  grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
+  gap 1rem
+  margin-top 2rem
+
+.card
+  text-align center
+  padding 1rem
+  border 1px solid #ddd
+  border-radius 5px
+  font-size 20px
+
+.card__image
+  width 50%
+  margin-bottom 1rem
+
+.card__content
+  margin-top 2rem
+
+/* Текстовые блоки */
+.text-block
+  display flex
+  gap 1rem
+  border 1px solid #ddd
+  padding 1rem
+  margin 1rem 0
+
+.text-block__text
+  flex 1
+
+.text-block__title
+  text-align center
+
+.text-block__paragraph
+  text-align justify
+  font-size 20px
+
+.text-block__image
+  width 25%
+  height auto
+
+/* Шапка */
+.header
+  background-color #f8f9fa
+  padding 1rem
+
+.nav
+  display flex
+  justify-content space-between
+  align-items center
+
+.nav__container
+  display flex
+  align-items center
+  width 100%
+
+.nav__logo
+  font-size 1.5rem
+  text-decoration none
+  color #000
+
+.nav__list
+  display flex
+  list-style none
+  margin 0
+  padding 0
+
+.nav__item
+  margin-left 1rem
+
+.nav__link
+  text-decoration none
+  color #000
+
+.nav__link--active
+  color #dc3545
+
+.nav__link:hover
+  background-color #f0f0f0
+  color #007bff
+
+/* Подвал */
+.footer
+  background-color #f8f9fa
+  padding 1rem
+
+.footer__container
+  display flex
+  justify-content space-between
+
+.footer__graphic
+  margin-top 10px
+
+.table-container
+  overflow auto
+
+table
+  width 100%
+  margin 20px 0
+
+th, td
+  padding 8px
+  text-align left
+
+/* Медиазапросы */
+
+
+@media (max-width 1024px)
+
+
+  .text-block
+    flex-direction column
+
+  .text-block__image
+    width 100%
+    margin-top 1rem
+
+  .card-grid
+    grid-template-columns 1fr
+
+@media (max-width 600px)
+
+  .card-grid
+    grid-template-columns 1fr
+
+  .text-block
+    flex-direction column
+
+  .text-block__image
+    width 100%
+    margin-top 1rem
+
+  .card__image
+    width 50%
+
+/* Стили классов */
+.class__title
+  font-size 32px
+  font-weight bold
+  text-align center
+  margin-bottom 1rem
+
+.class__image img
+  max-width 100%
+  height auto
+  display block
+  margin 0 auto
+  border-radius 8px
+
+.class__paragraph
+  font-size 20px

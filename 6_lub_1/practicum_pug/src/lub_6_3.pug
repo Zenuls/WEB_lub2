@@ -1,0 +1,184 @@
+extends template
+
+block nav
+  ul(class="nav__list")
+    li(class="nav__item")
+      a(href="index.html", class="nav__link") Самые популярные книги
+    li(class="nav__item")
+      a(href="lub_6_3.html", class="nav__link nav__link--active") Список наиболее популярных книг
+    li(class="nav__item")
+      a(href="#", class="nav__link") Меню_3
+    li(class="nav__item")
+      a(href="#", class="nav__link") Меню_4
+
+block content
+
+  details
+    summary(class="grafic") График
+    table
+      tr
+        th Значение по оси OX
+        th Результат
+      tr
+        td
+          form
+            label
+              input(type="radio" name="OX" value="author")
+              | Автор
+            br
+            label
+              input(type="radio" name="OX" value="yers")
+              | Год издания
+            br
+            label
+              input(type="radio" name="OX" value="house")
+              | Издательство
+        td
+          form
+            label
+              input(type="checkbox" name="rez" value="max_r")
+              | Максимально читаема
+            br
+            label
+              input(type="checkbox" name="rez" value="min_r")
+              | Минимально читаема
+            br
+            label
+              input(type="checkbox" name="rez" value="books")
+              | Кол-во книг
+  
+    p Здесь будет график
+
+  details
+    summary Фильтр
+    form
+      p
+        label Название книги:
+        input(type="text" name="name")
+      p
+        label Автор:
+        input(type="text" name="author")
+      p
+        | Год издания:
+        label от
+        input(type="number" name="min_yers" min="2010" max="2025")
+        label до
+        input(type="number" name="max_yers" min="2010" max="2025")
+      p
+        label Издательство:
+        input(type="text" name="house")
+      p
+        | Кол-во страниц:
+        label от
+        input(type="number" name="min_lists" min="1" max="3000")
+        label до
+        input(type="number" name="max_lists" min="1" max="3000")
+      p
+        label Читали (тыс.):
+        label от
+        input(type="number" name="min_readers" min="1" max="5000")
+        label до
+        input(type="number" name="max_readers" min="1" max="5000")
+      p
+        input(type="button" value="Найти")
+
+  details
+    summary Сортировка
+    form
+      p
+        label Первый уровень:
+        select#first
+          option(value="0") Нет
+          option(value="1") Название книги
+          option(value="2") Автор
+          option(value="3") Год издательства
+          option(value="4") Издание
+          option(value="5") Кол-во страниц
+          option(value="6") Читатели
+        label по убыванию?
+        input(type="checkbox" name="first_level_min" value="yes")
+      p
+        label Второй уровень:
+        select#second
+          option(value="0") Нет
+          option(value="1") Название книги
+          option(value="2") Автор
+          option(value="3") Год издательства
+          option(value="4") Издание
+          option(value="5") Кол-во страниц
+          option(value="6") Читатели
+        label по убыванию?
+        input(type="checkbox" name="second_level_min" value="yes")
+      p
+        label Третий уровень:
+        select#third
+          option(value="0") Нет
+          option(value="1") Название книги
+          option(value="2") Автор
+          option(value="3") Год издательства
+          option(value="4") Издание
+          option(value="5") Кол-во страниц
+          option(value="6") Читатели
+        label по убыванию?
+        input(type="checkbox" name="third_level_min" value="yes")
+      p
+        input(type="button" value="Сортировать")
+
+  mixin bookRow(title, author, year, publisher, pages, readers)
+    tr
+      td= title
+      td= author
+      td= year
+      td= publisher
+      td= pages
+      td= readers
+
+  .table-container
+    table(border="2" align="left" cellspacing="0" cellpadding="2")
+        thead
+          tr
+            th Название книги
+            th Автор
+            th Год издания
+            th Издательство
+            th Кол-во страниц
+            th Читали (тыс.)
+        tbody
+        - var books = [
+        -   {title: 'Мастер и Маргарита', author: 'Михаил Булгаков', year: 2010, publisher: 'АСТ', pages: 512, readers: 2000},
+        -   {title: 'Преступление и наказание', author: 'Федор Достоевский', year: 2018, publisher: 'Эксмо', pages: 672, readers: 3000},
+        -   {title: 'Маленький принц', author: 'Антуан де Сент-Экзюпери', year: 2020, publisher: 'Рипол Классик', pages: 112, readers: 2500},
+        -   {title: 'Собачье сердце', author: 'Михаил Булгаков', year: 2014, publisher: 'АСТ', pages: 160, readers: 1500},
+        -   {title: 'Три товарища', author: 'Эрих Мария Ремарк', year: 2016, publisher: 'Азбука', pages: 528, readers: 1700},
+        -   {title: 'Над пропастью во ржи', author: 'Джером Сэлинджер', year: 2017, publisher: 'Азбука', pages: 288, readers: 2300},
+        -   {title: 'Герой нашего времени', author: 'Михаил Лермонтов', year: 2019, publisher: 'Эксмо', pages: 288, readers: 1900},
+        -   {title: 'Приключения Шерлока Холмса', author: 'Артур Конан Дойл', year: 2021, publisher: 'АСТ', pages: 576, readers: 2700},
+        -   {title: 'Портрет Дориана Грея', author: 'Оскар Уайльд', year: 2015, publisher: 'Азбука', pages: 320, readers: 2200},
+        -   {title: 'Властелин колец', author: 'Джон Рональд Руэл Толкин', year: 2020, publisher: 'АСТ', pages: 1200, readers: 5000},
+        -   {title: 'Крестный отец', author: 'Марио Пьюзо', year: 2018, publisher: 'Азбука', pages: 512, readers: 1600},
+        -   {title: 'Триумфальная арка', author: 'Эрих Мария Ремарк', year: 2016, publisher: 'Азбука', pages: 432, readers: 1300},
+        -   {title: 'Мертвые души', author: 'Николай Гоголь', year: 2017, publisher: 'Эксмо', pages: 448, readers: 2100},
+        -   {title: 'Поющие в терновнике', author: 'Колин Маккалоу', year: 2014, publisher: 'АСТ', pages: 640, readers: 1100},
+        -   {title: 'Грозовой перевал', author: 'Эмили Бронте', year: 2019, publisher: 'Азбука', pages: 416, readers: 1400},
+        -   {title: 'На западном фронте без перемен', author: 'Эрих Мария Ремарк', year: 2020, publisher: 'Азбука', pages: 320, readers: 1700},
+        -   {title: 'Демиан', author: 'Герман Гессе', year: 2018, publisher: 'Эксмо', pages: 256, readers: 1200},
+        -   {title: 'Зеленая миля', author: 'Стивен Кинг', year: 2017, publisher: 'АСТ', pages: 384, readers: 2600},
+        -   {title: 'Сто лет одиночества', author: 'Габриэль Гарсиа Маркес', year: 2019, publisher: 'Эксмо', pages: 464, readers: 2200},
+        -   {title: 'Собор Парижской Богоматери', author: 'Виктор Гюго', year: 2020, publisher: 'Эксмо', pages: 656, readers: 1800},
+        -   {title: 'Робинзон Крузо', author: 'Даниель Дефо', year: 2017, publisher: 'АСТ', pages: 320, readers: 2400},
+        -   {title: 'Приключения Алисы в стране чудес', author: 'Льюис Кэрролл', year: 2020, publisher: 'Азбука', pages: 192, readers: 2300},
+        -   {title: 'По ком звонит колокол', author: 'Эрнест Хемингуэй', year: 2019, publisher: 'Азбука', pages: 544, readers: 1900},
+        -   {title: 'Мартин Иден', author: 'Джек Лондон', year: 2021, publisher: 'Эксмо', pages: 448, readers: 1600},
+        -   {title: 'Понедельник начинается в субботу', author: 'Аркадий и Борис Стругацкие', year: 2018, publisher: 'АСТ', pages: 304, readers: 1700},
+        -   {title: 'Мы', author: 'Евгений Замятин', year: 2019, publisher: 'Азбука', pages: 320, readers: 1500},
+        -   {title: 'Прощай, оружие!', author: 'Эрнест Хемингуэй', year: 2021, publisher: 'АСТ', pages: 352, readers: 1400},
+        -   {title: 'Доктор Живаго', author: 'Борис Пастернак', year: 2015, publisher: 'Азбука', pages: 608, readers: 1300},
+        -   {title: 'Камера обскура', author: 'Владимир Набоков', year: 2020, publisher: 'Азбука', pages: 320, readers: 1000},
+        -   {title: 'Фауст', author: 'Иоганн Вольфганг Гёте', year: 2017, publisher: 'Эксмо', pages: 464, readers: 1600},
+        -   {title: 'Божественная комедия', author: 'Данте Алигьери', year: 2019, publisher: 'Азбука', pages: 704, readers: 1700},
+        -   {title: 'Заводной апельсин', author: 'Энтони Берджесс', year: 2021, publisher: 'Эксмо', pages: 240, readers: 1400},
+        -   {title: 'Чапаев и Пустота', author: 'Виктор Пелевин', year: 2018, publisher: 'АСТ', pages: 320, readers: 1500},
+        -   {title: 'Повелитель мух', author: 'Уильям Голдинг', year: 2021, publisher: 'Азбука', pages: 432, readers: 1200}
+        - ]
+        each book in books
+          +bookRow(book.title, book.author, book.year, book.publisher, book.pages, book.readers)

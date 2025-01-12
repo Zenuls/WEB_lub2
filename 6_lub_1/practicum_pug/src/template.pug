@@ -1,0 +1,30 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title= title
+  body
+    header(class="header")
+      nav(class="nav")
+        .nav__container
+          a(href="#", class="nav__logo") Книги
+          
+          block nav
+            ul(class="nav__list")
+              li(class="nav__item")
+                a(href="index.html", class="nav__link nav__link--active") Самые популярные книги
+              li(class="nav__item")
+                a(href="lub_6_3.html", class="nav__link") Список наиболее популярных книг
+              li(class="nav__item")
+                a(href="#", class="nav__link") Меню_3
+              li(class="nav__item")
+                a(href="#", class="nav__link") Меню_4
+
+    main
+      block content
+
+    footer(class="footer")
+      .footer__container
+        div &copy; Иванов В.А., группа 5, 2024-2025
+        div ✉ Контакты

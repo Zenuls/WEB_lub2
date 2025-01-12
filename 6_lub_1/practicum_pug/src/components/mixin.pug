@@ -1,0 +1,12 @@
+mixin table(n)
+    style.
+        .blue { background-color: lightblue; }
+    table
+        each row in [...Array(n).keys()]
+            tr
+                each col in [...Array(n).keys()]
+                    - const isBlue = Math.floor(row / 2) % 2 === Math.floor(col / 2) % 2
+                    td(class=isBlue ? 'blue' : '')= ``
+
+
+    
