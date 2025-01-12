@@ -1,41 +1,55 @@
-/* Общие стили */
-.page__main-container
-  padding 1rem
+// Переменные
+$padding = 1rem
+$gap = 20px
+$font-size-large = 24px
+$font-size-medium = 20px
+$border-radius = 5px
+$border-color = #ddd
+$header-bg = #f8f9fa
+$hover-color = #007bff
+$active-color = #dc3545
+$navy-color = navy
+$grey-bg = grey
 
+// Миксин для текста
+text-style(fontSize, color)
+  font-size fontSize
+  color color
+
+// Общие стили
+.page__main-container
+  padding $padding
+
+// Навигация
 .nav__container
   display flex
   align-items center
-  padding 0 20px
+  padding 0 $gap
+  @media (max-width 900px)
+    flex-direction column
+    align-items flex-start
 
 .nav__logo
-  color white
+  text-style($font-size-large, black)
   text-decoration none
-  font-size 24px
   font-weight bold
 
 .nav__list
   list-style none
   display flex
   margin 0
-  padding 0
-  font-size 20px
-
-@media (max-width 900px)
-  .nav__container
+  text-style($font-size-medium, black)
+  @media (max-width 900px)
     flex-direction column
-    align-items flex-start
+    margin-top $gap
 
-  .nav__list
-    flex-direction column
-    margin-top 10px
-
-/* Стили для изображений */
+// Стили изображений
 .image-grid
-  display flex  /* Используем flexbox для центрирования */
-  justify-content center  /* Центрируем изображения по горизонтали */
-  align-items center  /* Центрируем изображения по вертикали */
-  flex-wrap wrap  /* Разрешаем перенос изображений */
-  gap 20px
+  display flex
+  justify-content center
+  align-items center
+  flex-wrap wrap
+  gap $gap
 
 .image-wrapper
   display flex
@@ -47,37 +61,43 @@
   max-width 300px
   transition transform 0.3s ease
 
-.image-grid__image:hover
-  transform scale(1.1)
+  &:hover
+    transform scale(1.1)
 
-/* Стили карточек */
+// Стили карточек
 .card-grid
   display grid
   grid-template-columns repeat(auto-fit, minmax(300px, 1fr))
-  gap 1rem
-  margin-top 2rem
+  gap $padding
+  margin-top $gap
+  @media (max-width 1024px)
+    grid-template-columns 1fr
 
 .card
   text-align center
-  padding 1rem
-  border 1px solid #ddd
-  border-radius 5px
-  font-size 20px
+  padding $padding
+  border 1px solid $border-color
+  border-radius $border-radius
+  font-size $font-size-medium
 
 .card__image
   width 50%
-  margin-bottom 1rem
+  margin-bottom $padding
+  @media (max-width 600px)
+    width 50%
 
 .card__content
-  margin-top 2rem
+  margin-top $gap
 
-/* Текстовые блоки */
+// Текстовые блоки
 .text-block
   display flex
-  gap 1rem
-  border 1px solid #ddd
-  padding 1rem
-  margin 1rem 0
+  gap $padding
+  border 1px solid $border-color
+  padding $padding
+  margin $padding 0
+  @media (max-width 1024px)
+    flex-direction column
 
 .text-block__text
   flex 1
@@ -87,119 +107,57 @@
 
 .text-block__paragraph
   text-align justify
-  font-size 20px
+  font-size $font-size-medium
 
 .text-block__image
   width 25%
   height auto
+  @media (max-width 1024px)
+    width 100%
+    margin-top $padding
 
-/* Шапка */
+// Шапка
 .header
-  background-color #f8f9fa
-  padding 1rem
+  background-color $header-bg
+  padding $padding
 
 .nav
   display flex
   justify-content space-between
   align-items center
 
-.nav__container
-  display flex
-  align-items center
-  width 100%
-
-.nav__logo
-  font-size 1.5rem
-  text-decoration none
-  color #000
-
-.nav__list
-  display flex
-  list-style none
-  margin 0
-  padding 0
-
-.nav__item
-  margin-left 1rem
-
 .nav__link
+  margin $gap
   text-decoration none
   color #000
+  
+  &:hover
+    background-color #f0f0f0
+    color $hover-color
 
 .nav__link--active
-  color #dc3545
+  color $active-color
 
-.nav__link:hover
-  background-color #f0f0f0
-  color #007bff
-
-/* Подвал */
+// Подвал
 .footer
-  background-color #f8f9fa
-  padding 1rem
+  background-color $header-bg
+  padding $padding
 
 .footer__container
   display flex
   justify-content space-between
 
 .footer__graphic
-  margin-top 10px
+  margin-top $gap
 
+// Таблицы
 .table-container
   overflow auto
 
 table
   width 100%
-  margin 20px 0
+  margin $gap 0
 
 th, td
   padding 8px
   text-align left
-
-/* Медиазапросы */
-
-
-@media (max-width 1024px)
-
-
-  .text-block
-    flex-direction column
-
-  .text-block__image
-    width 100%
-    margin-top 1rem
-
-  .card-grid
-    grid-template-columns 1fr
-
-@media (max-width 600px)
-
-  .card-grid
-    grid-template-columns 1fr
-
-  .text-block
-    flex-direction column
-
-  .text-block__image
-    width 100%
-    margin-top 1rem
-
-  .card__image
-    width 50%
-
-/* Стили классов */
-.class__title
-  font-size 32px
-  font-weight bold
-  text-align center
-  margin-bottom 1rem
-
-.class__image img
-  max-width 100%
-  height auto
-  display block
-  margin 0 auto
-  border-radius 8px
-
-.class__paragraph
-  font-size 20px
