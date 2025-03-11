@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор прямоугольной трапеции</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <h1>Калькулятор прямоугольной трапеции</h1>
+
+        <label for="inputType">Тип входных данных:</label>
+        <select id="inputType">
+            <option value="sideAndAngle">Основания и угол</option>
+            <option value="sideAndSide">Основания и боковая сторона</option>
+        </select>
+        <button onclick="showInputFields()">Показать</button>
+
+        <div class="image-container">
+            <img id="trapezoidImage" src="trapezoid_side_angle.png" alt="Прямоугольная трапеция">
+        </div>
+
+        <div class="input-fields">
+            <label id="label1">Основание a: </label> <input type="number" id="input1" min="0">
+            <label id="label2">Основание b: </label> <input type="number" id="input2" min="0">
+            <label id="label3">Угол α (в градусах): </label> <input type="number" id="input3" min="0" max="90">
+        </div>
+
+        <label id="calculation">Вычислить:</label>
+        <select id="calculations" multiple="">
+            <option value="height">Высота</option>
+            <option value="area">Площадь</option>
+            <option value="perimeter">Периметр</option>
+        </select>
+
+        <button onclick="calculate()">Вычислить</button>
+        <button onclick="clearData()">Очистить</button>
+
+        <div id="output"></div>
+    </div>
+
+    <script src="program.js"></script>
+</body>
+</html>

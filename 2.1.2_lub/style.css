@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.calculator {
+    border: solid 2px gainsboro;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.input-fields label {
+    display: block;
+    margin-top: 10px;
+}
+
+.input-fields input {
+   
+    padding: 5px;
+    margin-top: 5px;
+}
+
+#calculation {
+    margin-top: 10px;
+    display: block;
+    width: 90px;
+}
+
+.error {
+    border: 2px solid red;
+}
+
+
+
+#calculations {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    height: 52px;
+    display: block;
+}
+
+#output {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+#output p {
+    margin: 5px 0;
+}
+
+#output .error {
+    color: red;
+    font-weight: bold;
+}
