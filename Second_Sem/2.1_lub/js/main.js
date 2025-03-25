@@ -1,3 +1,19 @@
+/*
+let Numbers = (...nums) => nums.filter(num => String(num).split('').every((digit, index, arr) => arr.indexOf(digit)=== arr.lastIndexOf(digit))).filter((num, index, arr) => arr.indexOf(num) === index).join(' ');
+
+console.log(Numbers(111));
+console.log(Numbers(55, 4));
+console.log(Numbers(1, 11, 12));
+console.log(Numbers(11, 12, 12)); 
+console.log(Numbers(11, 12, 24));
+
+*/
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
     createTable(books, 'list');
 
