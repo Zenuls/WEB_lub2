@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Анимация по траектории</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="http://d3js.org/d3.v7.min.js"> </script>
+    <script src="JavaScript/main.js"></script>
+    <script src="JavaScript/image.js"></script>
+    <script src="JavaScript/path.js"></script> 
+</head>
+<body>  
+    <form id="setting">
+        <div class="stg">
+            <div>
+                <p><span class="bold">Координаты рисунка</span><br>
+                    <div class="stg_one">
+                        <span>
+                            <label for="cx">x: </label>
+                            <input type="number" id="cx" value="300" max="600" min="0"><br>
+                            <label for="cy">y: </label>
+                            <input type="number" id="cy" value="300" max="600" min="0">
+                        </span>
+                        <span>
+                            <label for="cx1">до </label>
+                            <input type="number" id="cx1" value="300" max="600" min="0"><br>
+                            <label for="cy1">до </label>
+                            <input type="number" id="cy1" value="300" max="600" min="0">
+                        </span>
+                        
+                    </div>
+                    
+                </p>
+                
+            </div>
+            <div>
+                <p><span class="bold">Масштаб</span><br>
+                    <div class="stg_one">
+                        <span>
+                            <label for="mx">по x: </label>
+                            <input type="number" id="mx" value="1" max="600" min="0"><br>
+                            <label for="my">по y: </label>
+                            <input type="number" id="my" value="1" max="600" min="0">
+                        </span>
+                        <span>
+                            <label for="mx1">до </label>
+                            <input type="number" id="mx1" value="1" max="600" min="0"><br>
+                            <label for="my1">до </label>
+                            <input type="number" id="my1" value="1" max="600" min="0">
+                        </span>
+                    </div>
+                    
+                </p>
+            </div>
+            <div>
+                <p><span class="bold">Поворот</span><br>
+                    <div class="stg_one">
+                        <span>
+                            <label for="ang">угол: </label>
+                            <input type="number" id="ang" value="0" max="360" min="0"><br>
+                        </span>
+                        <span>
+                            <label for="ang1">до </label>
+                            <input type="number" id="ang1" value="0" max="360" min="0"><br>
+                        </span>
+                    </div>
+                    
+                </p>
+            </div>
+            <div>
+                <p><span class="bold">Время анимации</span><br>
+                    <div class="stg_one">
+                        <span>
+                            <label for="time">сек: </label>
+                            <input type="number" id="time" value="6" max="100" min="0"><br>
+                        </span>
+                    </div>
+                    
+                </p>
+            </div>
+        </div>
+        <div>
+            <input type="button" value="▶ Старт">
+            <select>
+                <option value="Linear" selected> Linear </option>
+                <option value="Elastic"> Elastic </option>
+                <option value="Bounce"> Bounce </option>
+            </select>
+            <input type="button" value="✖ Очистить">
+        </div>        
+    </form>
+
+    <svg></svg>
+
+  </body>
+</html>

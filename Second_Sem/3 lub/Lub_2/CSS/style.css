@@ -1,0 +1,19 @@
+.stg {
+    display: flex;
+}
+
+.stg_one {
+    display: flex;
+}
+
+.stg div{
+    padding-right: 25px;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.stg_one span{
+    padding-right: 5px;
+}
