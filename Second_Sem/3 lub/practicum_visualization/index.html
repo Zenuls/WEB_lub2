@@ -1,0 +1,53 @@
+<html lang="ru"> 
+<head> 
+  <meta charset="utf-8"> 
+  <title>Визуализация данных</title> 
+  <link rel="stylesheet" href="CSS/style.css"> 
+  <script src="http://d3js.org/d3.v7.min.js"> </script> 
+  <script src="JavaScript/data.js"></script> 
+  <script src="JavaScript/main.js"></script> 
+  <script src="JavaScript/table.js"></script> 
+  <script src="JavaScript/chart.js"></script> 
+</head> 
+<body>    
+  <h3>Список самых высоких зданий</h3> 
+
+  <div class="form-container">
+    <div class="form-group">
+      <label>Значение по оси OX:</label>
+      <input type="radio" id="ox-country" name="ox-axis" value="Страна" checked>
+      <label for="ox-country" style="display: inline; font-weight: normal;">Страна</label>
+      <input type="radio" id="ox-year" name="ox-axis" value="Год">
+      <label for="ox-year" style="display: inline; font-weight: normal;">Год</label>
+    </div>
+    
+    <div class="form-group">
+      <label>Значение по оси OY:</label>
+      <input type="checkbox" id="oy-max" name="oy-axis" value="max" checked>
+      <label for="oy-max" style="display: inline; font-weight: normal;">Максимальная высота</label>
+      <input type="checkbox" id="oy-min" name="oy-axis" value="min">
+      <label for="oy-min" style="display: inline; font-weight: normal;">Минимальная высота</label>
+    </div>
+    
+    <div class="form-group">
+      <label for="chart-type">Тип диаграммы:</label>
+      <select id="chart-type">
+        <option value="scatter">Точечная диаграмма</option>
+        <option value="bar">Гистограмма</option>
+      </select>
+    </div>
+    
+    <button id="build-chart">Построить</button>
+    <div id="error-message" class="error"></div>
+  </div>
+
+  <svg></svg>
+  <div>
+    <input type="button" id="toggle-table" value="Скрыть таблицу">
+  </div>
+  
+  
+  <table id="build"> </table> 
+ 
+</body> 
+</html> 

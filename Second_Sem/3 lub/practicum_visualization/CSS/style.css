@@ -1,0 +1,80 @@
+
+
+/* Стили для заголовка */
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+
+
+/* Стили для таблицы */
+table {
+    width: 100%;
+    border: thin solid #4d4d4d;
+    margin-top: 10px;
+    border-collapse: collapse; 
+    background-color: #e4e4e4;
+}
+
+
+th {
+	
+	padding: 2px;
+	background: #e4e4e4;
+	border: thin solid #4d4d4d;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+td {
+	padding: 2px 5px;
+	border: thin solid #4d4d4d;
+	text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+svg {
+    width: 800px;
+    height: 400px;
+}
+svg text {
+    font: 8px Verdana;
+}
+svg path, line {
+    fill: none;
+    stroke: #333333;
+    width: 1px;
+}
+
+.form-container {
+    margin: 20px 0;
+    padding: 15px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
