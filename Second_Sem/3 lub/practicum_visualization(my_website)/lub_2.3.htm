@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Третья страница</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="http://d3js.org/d3.v7.min.js"> </script> 
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet">
+        <script src="js/data.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/table.js"></script>
+        <script src="js/filter.js"></script>
+        <script src="js/sort.js"></script>
+        <script src="js/chart.js"></script>
+        
+    </head>
+
+    <body>
+        <header class="bg-light">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="#">Книги</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="5.html">Самые популярные книги</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active text-danger" href="lub_2.3.htm">Список наиболее популярных книг</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Меню_3</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Меню_4</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="container py-4">
+
+            <details class="border rounded p-2 mb-3">
+                <summary>График</summary>
+                <div class="table-responsive">
+                    <table class="table table-bordered mt-3">
+                        <tr>
+                            <th>Значение по оси OX</th>
+                            <th>Результат</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <form>
+                                    <input type="radio" name="ox-axis" id="ox-author" value="Автор" checked> Автор<br>
+                                    <input type="radio" name="ox-axis" id="ox-year" value="Год издания"> Год издания<br>
+                                    <input type="radio" name="ox-axis" id="ox-house" value="Издательство"> Издательство
+                                </form>
+                            </td>
+                            <td>
+                                <form>
+                                    <input type="checkbox" name="oy-axis" value="max_r" id="oy_max" checked> Максимально читаема<br>
+                                    <input type="checkbox" name="oy-axis" value="min_r" id="oy_min"> Минимально читаема<br>
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="border rounded p-2 mb-3">
+                        <label for="chart-type" class="form-label">Тип диаграммы:</label>
+                        <select id="chart-type" class="form-select">
+                          <option value="scatter">Точечная диаграмма</option>
+                          <option value="bar">Гистограмма</option>
+                          <option value="line">График</option>
+                        </select>
+                      </div>
+                </div>
+                <button class="btn btn-outline-secondary" id = "build-chart" value="Построить">Построить</button>
+                <div id="error-message" class="error"></div>
+                <svg></svg>
+            </details>
+
+            <details class="border rounded p-2 mb-3">
+                <summary> Фильтры </summary>
+                <span>
+                    <form id="filter" class="mt-3">
+                        <div class="main_filter">
+                            <div class="mb-2">
+                                <label for="name" class="form-label">Название книги:</label>
+                                <input type="text" id="name" class="form-control">
+                            </div>
+
+                            <div class="mb-2">
+                                <label for="author" class="form-label">Автор:</label>
+                                <input type="text" id="author" class="form-control">
+                            </div>
+
+                            <div class="mb-2">
+                                <label for="min_yers" class="form-label">Год издания:</label>
+                                <div class="d-flex">
+                                    <input type="number" id="min_yers" class="form-control me-2" min="2010" max="2025" placeholder="от">
+                                    <input type="number" id="max_yers" class="form-control" min="2010" max="2025" placeholder="до">
+                                </div>
+                            </div>
+                            <div class="mb-2">
+                                <label for="house" class="form-label">Издательство:</label>
+                                <input type="text" id="house" class="form-control">
+                            </div>
+
+
+                            <div class="mb-2">
+                                <label for="min_lists" class="form-label">Кол-во страниц:</label>
+                                <div class="d-flex">
+                                    <input type="number" id="min_lists" class="form-control me-2" min="2010" max="2025" placeholder="от">
+                                    <input type="number" id="max_lists" class="form-control" min="2010" max="2025" placeholder="до">
+                                </div>
+                            </div>
+
+                            <div class="mb-2">
+                                <label for="min_readers" class="form-label">Читали (тыс.):</label>
+                                <div class="d-flex">
+                                    <input type="number" id="min_readers" class="form-control me-2" min="2010" max="2025" placeholder="от">
+                                    <input type="number" id="max_readers" class="form-control" min="2010" max="2025" placeholder="до">
+                                </div>
+                            </div>
+
+
+                            
+                        </div>
+                        <input type="button" id ="FindFilter" class="btn btn-outline-secondary" value="Найти">
+                        <input type="button" id ="ClearFilter" class="btn btn-outline-danger" value="Очистить фильтры"> 
+                    </form>
+                </span>
+            </details>
+
+            <details class="border rounded p-2 mb-3">
+                <summary> Сортировка </summary>
+                <span>
+                    <form id="sort" class="mt-3">
+
+                        <div class="mb-2">
+                            <label for="fieldsFirst" class="form-label">Первый уровень:</label>
+                            <select id="fieldsFirst" class="form-select"></select>
+                            <div class="form-check">
+                                <label class="form-check-label" for="fieldsFirstDesc">
+                                    по убыванию? <input type="checkbox" id="fieldsFirstDesc" class="form-check-input">
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="mb-2">
+                            <label for="fieldsSecond" class="form-label">Второй уровень:</label>
+                            <select id="fieldsSecond" class="form-select"></select>
+                            <div class="form-check">
+                                <label class="form-check-label" for="fieldsSecondDesc">
+                                    по убыванию? <input type="checkbox" id="fieldsSecondDesc" class="form-check-input">
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-2">
+                            <label for="fieldsThird" class="form-label">Третий уровень:</label>
+                            <select id="fieldsThird" class="form-select"></select>
+                            <div class="form-check">
+                                <label class="form-check-label" for="fieldsThirdDesc">
+                                    по убыванию? <input type="checkbox" id="fieldsThirdDesc" class="form-check-input">
+                                </label>
+                            </div>
+                        </div>
+                        <input type="button" id="SortTable" class="btn btn-outline-secondary" value="Сортировать"> 
+                        <input type="button" id="ClearSort" class="btn btn-outline-danger" value="Сбросить сортировку">
+                    </form>
+                </span>
+            </details>
+            <div class="table-wrapper border">
+                <table  class=" table table-bordered text-center" id="list"></table> 
+            </div>
+            
+        </main>
+
+        <footer class="bg-light py-3">
+            <div class="container d-flex justify-content-between">
+                <div>&copy; Иванов В.А., группа 5, 2024-2025</div>
+                <div>✉ Контакты</div>
+            </div>
+        </footer>
+    </body>
+</html>

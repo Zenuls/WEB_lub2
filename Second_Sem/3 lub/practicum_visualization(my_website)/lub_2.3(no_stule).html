@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Третья страница</title>
+        <link rel="stylesheet" href="CSS/style.css">
+        <script src="js/data.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/table.js"></script>
+        <script src="js/filter.js"></script>
+        <script src="js/sort.js"></script>
+    </head>
+
+    <body>
+        <a href="5.html">Самые популярные книги</a><br>
+        <a href="lub_2.3.htm">Список наиболее популярных книг</a>
+        <hr>
+        <details>
+            <summary> График </summary>
+            <table>
+                <tr>
+                    <th>Значение по оси OX</th>
+                    <th>Результат</th>
+                </tr>
+                <tr>
+                    <td>
+                        <form>
+                            <input  type="radio"  name="OX" value="author"> Автор<br>
+                            <input  type="radio"  name="OX" value="yers"> Год издания<br>
+                            <input  type="radio"  name="OX" value="house"> Издательство
+                        </form> 
+                    </td>
+                    <td>
+                        <form>
+                            <input  type="checkbox"  name="rez" value="max_r"> Максимально читаема<br>
+                            <input  type="checkbox"  name="rez" value="min_r"> Минимально читаема<br>
+                            <input  type="checkbox"  name="rez" value="books"> Кол-во книг<br>
+                        </form> 
+                    </td>
+                </tr>
+            </table>
+            <input type="button" value="Построить">
+            <p>
+                Здесь будет график
+            </p>
+        </details>
+        <details>
+            <summary> Фильтры </summary>
+            <span>
+                <form id="filter">
+                    <h3>Фильтры</h3>
+                    <div class="main_filter">
+                        <label for="name">Название книги:</label>
+                        <input type="text" id="name">
+                        <label for="author">Автор:</label>
+                        <input type="text" id="author">
+                        <label for="min_yers">Год издания:</label>
+                        <span>от <input type="number" id="min_yers" min="2010" max="2025" style="width: 50px;"> до <input type="number" id="max_yers" min="2010" max="2025" style="width: 50px;"></span>
+                        <label for="house">Издательство:</label>
+                        <input type="text" id="house">
+                        <label for="min_lists">Кол-во страниц:</label>
+                        <span>от <input type="number" id="min_lists" min="1" max="3000" style="width: 50px;"> до <input type="number" id="max_lists" min="1" max="3000" style="width: 50px;"></span>
+                        <label for="min_readers">Читали (тыс.):</label>
+                        <span>от <input type="number" id="min_readers" min="1" max="5000" style="width: 50px;"> до <input type="number" id="max_readers" min="1" max="5000" style="width: 50px;"></span>
+                    </div>
+                    <input type="button" id ="FindFilter" value="Найти">
+                    <input type="button" id ="ClearFilter" value="Очистить фильтры"> 
+                </form>
+            </span>
+        </details>
+        <details>
+            <summary> Сортировка </summary>
+            <span>
+                <form id="sort">
+                    <h3>Сортировка</h3>
+                    <p>
+                        <label for="fieldsFirst">Первый уровень:</label>
+                        <select id="fieldsFirst"></select> 
+                        <label>
+                            по убыванию? <input type="checkbox" id="fieldsFirstDesc">
+                        </label>
+                    </p>
+                    <p>
+                        <label for="fieldsSecond">Второй уровень:</label>
+                        <select id="fieldsSecond"></select> 
+                        <label>
+                            по убыванию? <input type="checkbox" id="fieldsSecondDesc">
+                        </label>
+                    </p>
+                    <p>
+                        <label for="fieldsThird">Третий уровень:</label>
+                        <select id="fieldsThird"></select> 
+                        <label>
+                            по убыванию? <input type="checkbox" id="fieldsThirdDesc">
+                        </label>
+                    </p>
+                    <input type="button" id="SortTable" value="Сортировать"> 
+                    <input type="button" id="ClearSort" value="Сбросить сортировку">
+                </form>
+            </span>
+        </details>
+
+        <table  border="2" align="center" cellspacing="0" cellpadding="2" id="list">
+        </table>  
+    </body>
+</html>
