@@ -1,0 +1,72 @@
+.App {
+  /*text-align: center;*/
+  padding: 10px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: rgb(200, 200, 200);
+}
+
+td, th {
+  border: solid thin black;
+  padding: 5px 10px;
+}
+
+tr.show {
+  display: table-row;
+
+}
+
+
+tr.hide {
+  display: none;
+}
+
+.pagination {
+  margin-top: 10px;
+ 
+  
+}
+
+.pagination span {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.pagination span.active {
+  font-size: 1.5em;
+  color: rgb(0, 0, 255);
+}
+
+.pagination span:hover {
+  background-color: #f0f0f0;
+}
+
+button {
+  margin-right: 5px;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Две колонки одинаковой ширины */
+  gap: 1rem; /* Отступ между колонками */
+}
+
+svg {
+    width: 90%;
+    height: 600px;
+}
+
+svg path, line {
+    fill: none;
+    stroke: black;
+    width: 1px;
+}
+ 
+svg text {
+    font: 8px Verdana;
+}
