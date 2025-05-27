@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+
+.list li.item_main {
+  background-color: #0288D1;
+}
+
+.list li:hover {
+  background-color: #B5D6E8
+}
+
