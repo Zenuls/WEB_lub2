@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AOS Guide - Справочник по Animate On Scroll</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/aos-custom.css"> </head>
+
+<body>
+  <div class="app-container">
+    <aside class="sidebar" data-aos="fade-right" data-aos-duration="800">
+      <div class="logo">
+        <h1>AOS Guide</h1> </div>
+      <nav class="menu">
+        <ul>
+          <li class="active" data-section="fade-animations"><span>Fade анимации</span></li>
+          <li data-section="flip-animations"><span>Flip анимации</span></li>
+          <li data-section="slide-animations"><span>Slide анимации</span></li>
+          <li data-section="zoom-animations"><span>Zoom анимации</span></li>
+          <li data-section="custom-animations"><span>Кастомные анимации</span></li>
+          <li data-section="advanced-animations"><span>Продвинутые техники</span></li>
+        </ul>
+      </nav>
+      <div class="footer">
+        <p>Б9122-09.03.04</p>
+        <p>5 подгруппа</p>
+        <p>18 июня 2025</p>
+      </div>
+    </aside>
+    <main class="content">
+      <section class="content-section active" id="fade-animations">
+        <div class="section-content">
+          <h2 data-aos="fade-down">Fade анимации</h2>
+          <p data-aos="fade-up" data-aos-delay="200">Простые анимации появления с различными направлениями</p>
+          <!-- ============================================== -->
+          <!-- Fade анимации -->
+          <!-- ============================================== -->
+          <div class="code-example" data-lang="HTML" data-aos="fade-up" data-aos-delay="300"> <pre><code class="language-html">&lt;!-- Базовые fade анимации --&gt;
+&lt;div data-aos="fade"&gt;fade&lt;/div&gt;
+
+&lt;!-- Анимации с направлением --&gt;
+&lt;div data-aos="fade-up"&gt;fade-up&lt;/div&gt;
+&lt;div data-aos="fade-down"&gt;fade-down&lt;/div&gt;
+&lt;div data-aos="fade-left"&gt;fade-left&lt;/div&gt;
+&lt;div data-aos="fade-right"&gt;fade-right&lt;/div&gt;</code></pre> </div>
+          <div class="demo-section" data-aos="fade-up" data-aos-delay="400">
+            <!-- Fade -->
+            <div class="animation-demo">
+              <div class="animation-box" data-aos="fade"> fade </div>
+              <div class="animation-description"> Простое появление элемента с прозрачностью от 0 до 1. </div>
+            </div>
+            <!-- Fade-up -->
+            <div class="animation-demo">
+              <div class="animation-box" data-aos="fade-up"> fade-up </div>
+              <div class="animation-description"> Элемент появляется, одновременно двигаясь вверх из начального положения на 20px. </div>
+            </div>
+            <!-- Fade-down -->
+            <div class="animation-demo">
+              <div class="animation-box" data-aos="fade-down"> fade-down </div>
+              <div class="animation-description"> Элемент появляется, одновременно двигаясь вниз из начального положения на 20px. </div>
+            </div>
+            <!-- Fade-left -->
+            <div class="animation-demo">
+              <div class="animation-box" data-aos="fade-left"> fade-left </div>
+              <div class="animation-description"> Элемент появляется, одновременно двигаясь влево из начального положения на 20px. </div>
+            </div>
+            <!-- Fade-right -->
+            <div class="animation-demo">
+              <div class="animation-box" data-aos="fade-right"> fade-right </div>
+              <div class="animation-description"> Элемент появляется, одновременно двигаясь вправо из начального положения на 20px. </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ============================================== -->
+      <!-- Flip анимации -->
+      <!-- ============================================== -->
+      <section class="content-section" id="flip-animations">
+        <div class="section-content">
+          <h2 data-aos="fade-down">Flip анимации</h2>
+          <p data-aos="fade-up" data-aos-delay="200">Анимации переворота элементов</p>
+          <div class="code-example" data-lang="HTML" data-aos="fade-up" data-aos-delay="300"> <pre><code class="language-html">&lt;!-- Flip анимации --&gt;
+&lt;div data-aos="flip-up"&gt;flip-up&lt;/div&gt;
+&lt;div data-aos="flip-down"&gt;flip-down&lt;/div&gt;
+&lt;div data-aos="flip-left"&gt;flip-left&lt;/div&gt;
+&lt;div data-aos="flip-right"&gt;flip-right&lt;/div&gt;</code></pre> </div>
+          <div class="demo-section" data-aos="fade-up" data-aos-delay="400">
+            <!-- Flip-up -->
+            <div class="animation-demo">
+              <div class="animation-box" data-aos="flip-up"> flip-up </div>
+              <div class="animation-description"> Элемент переворачивается по оси X, начиная с поворота на 180 градусов. </div>
+            </div>
+            <!-- Остальные flip анимации с аналогичной структурой -->
+            <!-- Flip-down -->
+            <div class="animation-demo">
+              <div class="animation-box" data-aos="flip-down"> flip-down </div>
+              <div class="animation-description"> Элемент переворачивается по оси X в обратном направлении. </div>
+            </div>
+            <!-- Flip-left -->
+            <div class="animation-demo">
+              <div class="animation-box" data-aos="flip-left"> flip-left </div>
+              <div class="animation-description"> Элемент переворачивается по оси Y, начиная с поворота на 180 градусов. </div>
+            </div>
+            <!-- Flip-right -->
+            <div class="animation-demo">
+              <div class="animation-box" data-aos="flip-right"> flip-right </div>
+              <div class="animation-description"> Элемент переворачивается по оси Y в обратном направлении. </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ============================================== -->
+      <!-- Slide анимации -->
+      <!-- ============================================== -->
+      <section class="content-section" id="slide-animations">
+        <div class="section-content">
+          <h2 data-aos="fade-down">Slide анимации</h2>
+          <p data-aos="fade-up" data-aos-delay="200">Анимации скольжения элементов</p>
+          <div class="code-example" data-lang="HTML" data-aos="fade-up" data-aos-delay="300"> <pre><code class="language-html">&lt;!-- Slide анимации --&gt;
+&lt;div data-aos="slide-up"&gt;slide-up&lt;/div&gt;
+&lt;div data-aos="slide-down"&gt;slide-down&lt;/div&gt;
+&lt;div data-aos="slide-left"&gt;slide-left&lt;/div&gt;
+&lt;div data-aos="slide-right"&gt;slide-right&lt;/div&gt;</code></pre> </div>
+          <div class="demo-section" data-aos="fade-up" data-aos-delay="400">
+            <!-- Slide-up -->
+            <div class="animation-demo">
+              <div class="animation-box" data-aos="slide-up"> slide-up </div>
+              <div class="animation-description"> Элемент плавно выезжает снизу вверх. </div>
+            </div>
+            <!-- Slide-down -->
+            <div class="animation-demo">
+              <div class="animation-box" data-aos="slide-down"> slide-down </div>
+              <div class="animation-description"> Элемент плавно выезжает сверху вниз. </div>
+            </div>
+            <!-- Slide-left -->
+            <div class="animation-demo">
+              <div class="animation-box" data-aos="slide-left"> slide-left </div>
+              <div class="animation-description"> Элемент плавно выезжает справа налево. </div>
+            </div>
+            <!-- Slide-right -->
+            <div class="animation-demo">
+              <div class="animation-box" data-aos="slide-right"> slide-right </div>
+              <div class="animation-description"> Элемент плавно выезжает слева направо. </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ============================================== -->
+      <!-- Zoom анимации -->
+      <!-- ============================================== -->
+      <section class="content-section" id="zoom-animations">
+        <div class="section-content">
+          <h2 data-aos="fade-down">Zoom анимации</h2>
+          <p data-aos="fade-up" data-aos-delay="200">Анимации масштабирования элементов</p>
+          <div class="code-example" data-lang="HTML" data-aos="fade-up" data-aos-delay="300"> <pre><code class="language-html">&lt;!-- Zoom анимации --&gt;
+&lt;div data-aos="zoom-in"&gt;zoom-in&lt;/div&gt;
+&lt;div data-aos="zoom-in-up"&gt;zoom-in-up&lt;/div&gt;
+&lt;div data-aos="zoom-in-down"&gt;zoom-in-down&lt;/div&gt;
+&lt;div data-aos="zoom-in-left"&gt;zoom-in-left&lt;/div&gt;
+&lt;div data-aos="zoom-in-right"&gt;zoom-in-right&lt;/div&gt;
+&lt;div data-aos="zoom-out"&gt;zoom-out&lt;/div&gt;</code></pre> </div>
+          <div class="demo-section" data-aos="fade-up" data-aos-delay="400">
+            <!-- Zoom-in -->
+            <div class="animation-demo">
+              <div class="animation-box" data-aos="zoom-in"> zoom-in </div>
+              <div class="animation-description"> Элемент плавно увеличивается из точки с масштабом 0.5. </div>
+            </div>
+            <!-- Zoom-in-up -->
+            <div class="animation-demo">
+              <div class="animation-box" data-aos="zoom-in-up"> zoom-in-up </div>
+              <div class="animation-description"> Элемент увеличивается, одновременно двигаясь вверх. </div>
+            </div>
+            <!-- Zoom-in-down -->
+            <div class="animation-demo">
+              <div class="animation-box" data-aos="zoom-in-down"> zoom-in-down </div>
+              <div class="animation-description"> Элемент увеличивается, одновременно двигаясь вниз. </div>
+            </div>
+            <!-- Zoom-in-left -->
+            <div class="animation-demo">
+              <div class="animation-box" data-aos="zoom-in-left"> zoom-in-left </div>
+              <div class="animation-description"> Элемент увеличивается, одновременно двигаясь влево. </div>
+            </div>
+            <!-- Zoom-in-right -->
+            <div class="animation-demo">
+              <div class="animation-box" data-aos="zoom-in-right"> zoom-in-right </div>
+              <div class="animation-description"> Элемент увеличивается, одновременно двигаясь вправо. </div>
+            </div>
+            <!-- Zoom-out -->
+            <div class="animation-demo">
+              <div class="animation-box" data-aos="zoom-out"> zoom-out </div>
+              <div class="animation-description"> Элемент плавно уменьшается до масштаба 0.5. </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ============================================== -->
+      <!-- Кастомные анимации -->
+      <!-- ============================================== -->
+      <section class="content-section" id="custom-animations">
+        <div class="section-content">
+          <h2 data-aos="fade-down">Кастомные анимации</h2>
+          <p data-aos="fade-up" data-aos-delay="200">Создавайте свои собственные анимации с помощью CSS</p>
+          <div class="code-example" data-lang="HTML" data-aos="fade-up" data-aos-delay="300"> <pre><code class="language-html">&lt;!-- HTML для кастомной анимации --&gt;
+&lt;div data-aos="custom-animation"&gt;custom-animation&lt;/div&gt;
+&lt;div data-aos="rotate-animation"&gt;rotate-animation&lt;/div&gt;
+&lt;div data-aos="custom-bounce"&gt;custom-bounce&lt;/div&gt;</code></pre> </div>
+          <div class="code-example" data-lang="CSS" data-aos="fade-up" data-aos-delay="300"> <pre><code class="language-css">/* CSS для кастомной анимации */
+[data-aos="custom-animation"] {
+    opacity: 0;
+    transform: scale(0.8);
+    transition-property: transform, opacity;
+}
+
+[data-aos="custom-animation"].aos-animate {
+    opacity: 1;
+    transform: scale(1);
+}
+
+[data-aos="rotate-animation"] {
+    opacity: 0;
+    transform: rotate(-180deg) scale(0.5);
+    transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+[data-aos="rotate-animation"].aos-animate {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+}
+
+[data-aos="custom-bounce"] {
+    opacity: 0;
+    transform: scale(0.5);
+    transition-property: transform, opacity;
+}
+
+[data-aos="custom-bounce"].aos-animate {
+    opacity: 1;
+    transform: scale(1.1);
+    animation: bounce 0.5s ease infinite alternate;
+}</code></pre> </div>
+          <div class="demo-section" data-aos="fade-up" data-aos-delay="400">
+            <!-- Custom animation -->
+            <div class="animation-demo">
+              <div class="animation-box" data-aos="custom-animation"> custom-animation </div>
+              <div class="animation-description"> Простая кастомная анимация с изменением масштаба и прозрачности. </div>
+            </div>
+            <!-- Rotate animation -->
+            <div class="animation-demo">
+              <div class="animation-box" data-aos="rotate-animation"> rotate-animation </div>
+              <div class="animation-description"> Анимация с вращением на 180 градусов и изменением масштаба. </div>
+            </div>
+            <!-- Custom bounce -->
+            <div class="animation-demo">
+              <div class="animation-box" data-aos="custom-bounce"> custom-bounce </div>
+              <div class="animation-description"> Анимация с эффектом "отскока" после появления. </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ============================================== -->
+      <!-- Продвинутые техники -->
+      <!-- ============================================== -->
+      <section class="content-section" id="advanced-animations">
+        <div class="section-content">
+          <h2 data-aos="fade-down">Продвинутые техники</h2>
+          <p data-aos="fade-up" data-aos-delay="200">Комбинирование анимаций и сложные сценарии</p>
+          <div class="code-example" data-lang="HTML" data-aos="fade-up" data-aos-delay="300"> <pre><code class="language-html">&lt;!-- Элементы с задержкой --&gt;
+&lt;div data-aos="fade-up" data-aos-delay="0"&gt;0ms&lt;/div&gt;
+&lt;div data-aos="fade-up" data-aos-delay="200"&gt;200ms&lt;/div&gt;
+&lt;div data-aos="fade-up" data-aos-delay="400"&gt;400ms&lt;/div&gt;
+&lt;div data-aos="fade-up" data-aos-delay="600"&gt;600ms&lt;/div&gt;
+&lt;div data-aos="fade-up" data-aos-delay="800"&gt;800ms&lt;/div&gt;
+
+&lt;!-- Анимация по якорю --&gt;
+&lt;div id="anchor-element"&gt;Якорный элемент&lt;/div&gt;
+&lt;div data-aos="fade-up" data-aos-anchor="#anchor-element"&gt;
+    Анимируется при появлении якорного элемента
+&lt;/div&gt;</code></pre> </div>
+          <div class="demo-section" data-aos="fade-up" data-aos-delay="400">
+            <!-- Последовательные анимации -->
+            <div class="animation-demo">
+              <div class="animation-description"> Элементы появляются последовательно с заданными задержками. </div>
+              <div class="sequence-demo">
+                <div class="sequence-item" data-aos="fade-up" data-aos-delay="0">0ms</div>
+                <div class="sequence-item" data-aos="fade-up" data-aos-delay="200">200ms</div>
+                <div class="sequence-item" data-aos="fade-up" data-aos-delay="400">400ms</div>
+                <div class="sequence-item" data-aos="fade-up" data-aos-delay="600">600ms</div>
+                <div class="sequence-item" data-aos="fade-up" data-aos-delay="800">800ms</div>
+              </div>
+            </div>
+            <!-- Анимация по якорю -->
+            <div class="animation-demo">
+              <div class="animation-description"> Элемент анимируется, когда якорный элемент появляется в зоне видимости. </div>
+              <div id="anchor-demo" class="anchor-demo" data-aos="fade"> Якорный элемент (появится первым) </div>
+              <div class="animation-box" data-aos="fade-up" data-aos-anchor="#anchor-demo" data-aos-delay="300"> Этот элемент анимируется после появления якорного элемента </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-css.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-markup.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+  <script src="js/aos-init.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
